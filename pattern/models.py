@@ -18,3 +18,4 @@ class SHACLPattern(models.Model):
 
     def __str__(self):
         return f"{self.pattern_class.name} - {self.code}"
+

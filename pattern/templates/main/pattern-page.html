@@ -82,7 +82,7 @@
           Sejauh mana entitas pada KG memiliki property-property yang diwajibkan untuk suatu class. 
           Misalnya pada class manusia, entitasnya mesti punya jenis kelamin, golongan darah, dsb. 
           Secara umum, untuk suatu class, jika property A, B, C, & D ada semua, maka entitas tersebut 
-          dianggap lengkap.
+          dianggap lengkap..
         </div>
         <table class="table table-hover table-responsive">
           <thead class="table-secondary">
@@ -97,11 +97,13 @@
               {% endif %}
             </tr>
           </thead>
-          <tbody>
+          <!-- <tbody>
             <tr>
               <th scope="row" class="details fw-bold text-center">1</th>
               <td class="code">
                 <textarea style="width: 100%; resize: none;" rows="12" readonly>
+
+
 %% SHAPE-NAME %% a sh:NodeShape;
     sh:targetClass %% CLASS %% ;
     sh:property %% PROPERTY-SHAPE-NAME-01 %%, %% PROPERTY-SHAPE-NAME-02 %%, %% PROPERTY-SHAPE-NAME-NN %% .
@@ -117,7 +119,8 @@
 %% PROPERTY-SHAPE-NAME-NN %% a sh:PropertyShape ;
     sh:path %% PROPERTY-NN %%  ;
       sh:minCount 1 .              
-                </textarea>
+    </textarea>
+             
                 <div class="d-flex justify-content-end my-2">
                   <button type="button" class="btn btn-outline-secondary button-font">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clipboard2" viewBox="0 0 16 16">
@@ -130,7 +133,7 @@
               </td>
               <td class="details text-justify">
                 Cek keberadaan suatu property pada entitas sebagai instance dari suatu class secara umum (general).
-              </td>
+              </td> 
               {% if is_admin %}
                 <td class="text-center">
                   <div class="btn btn-danger button-font">
@@ -143,96 +146,133 @@
               {% endif %}
             </tr>
             <tr>
-              <th scope="row" class="details fw-bold text-center">2</th>
-              <td class="code">
-                <textarea style="width: 100%; resize: none;" rows="12" readonly>
-%% SHAPE-NAME %% a sh:NodeShape;
-    sh:targetClass %% CLASS-NAME %% ;
-    sh:property %% PROPERTY-SHAPE-NAME %% .
-
-%% PROPERTY-SHAPE-NAME %% a sh:PropertyShape ;
-    sh:path [ sh:alternativePath ( %% PROPERTY-PATH-01 %% %% PROPERTY-PATH-02 %% %% PROPERTY-PATH-NN %% ) ]  ;
-    sh:minCount 1 .                           
-                </textarea>
-                <div class="d-flex justify-content-end my-2">
-                  <button type="button" class="btn btn-outline-secondary button-font">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clipboard2" viewBox="0 0 16 16">
-                      <path d="M3.5 2a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5H12a.5.5 0 0 1 0-1h.5A1.5 1.5 0 0 1 14 2.5v12a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-12A1.5 1.5 0 0 1 3.5 1H4a.5.5 0 0 1 0 1h-.5Z"/>
-                      <path d="M10 .5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5.5.5 0 0 1-.5.5.5.5 0 0 0-.5.5V2a.5.5 0 0 0 .5.5h5A.5.5 0 0 0 11 2v-.5a.5.5 0 0 0-.5-.5.5.5 0 0 1-.5-.5Z"/>
-                    </svg>
-                    Copy
-                  </button>
-                </div>
-              </td>
-              <td class="details text-justify">
-                Pattern untuk mengecek kardinalitas minimum dari suatu property pada suatu 
-                instance class yang ada di Wikidata KG. Class didefinisikan pada %% CLASS-URI  %% . 
-                Property-property yang diharuskan ada didefinisikan pada %% PROPERTY-01 %%, 
-                %% PROPERTY-02 %%, hingga %% PROPERTY-NN %% sesuai kebutuhan.
-              </td>
-              {% if is_admin %}
-              <td class="text-center">
-                  <div class="btn btn-danger button-font">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                      <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-                    </svg>
-                    Delete
+                <th scope="row" class="details fw-bold text-center">2</th>
+                <td class="code">
+                  <textarea style="width: 100%; resize: none;" rows="12" readonly>
+  %% SHAPE-NAME %% a sh:NodeShape;
+      sh:targetClass %% CLASS-NAME %% ;
+      sh:property %% PROPERTY-SHAPE-NAME %% .
+  
+  %% PROPERTY-SHAPE-NAME %% a sh:PropertyShape ;
+      sh:path [ sh:alternativePath ( %% PROPERTY-PATH-01 %% %% PROPERTY-PATH-02 %% %% PROPERTY-PATH-NN %% ) ]  ;
+      sh:minCount 1 .                           
+                  </textarea>
+                  <div class="d-flex justify-content-end my-2">
+                    <button type="button" class="btn btn-outline-secondary button-font">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clipboard2" viewBox="0 0 16 16">
+                        <path d="M3.5 2a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5H12a.5.5 0 0 1 0-1h.5A1.5 1.5 0 0 1 14 2.5v12a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-12A1.5 1.5 0 0 1 3.5 1H4a.5.5 0 0 1 0 1h-.5Z"/>
+                        <path d="M10 .5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5.5.5 0 0 1-.5.5.5.5 0 0 0-.5.5V2a.5.5 0 0 0 .5.5h5A.5.5 0 0 0 11 2v-.5a.5.5 0 0 0-.5-.5.5.5 0 0 1-.5-.5Z"/>
+                      </svg>
+                      Copy
+                    </button>
                   </div>
                 </td>
-              {% endif %}
-            </tr>
-            <tr>
-              <th scope="row" class="details fw-bold text-center">3</th>
-              <td class="code">
-                <textarea style="width: 100%; resize: none;" rows="12" readonly>
-%% SHAPE-NAME %% a sh:NodeShape;
-    sh:targetClass %% CLASS-NAME %% ;
-    sh:property %% PROPERTY-SHAPE-NAME-01 %%, %% PROPERTY-SHAPE-NAME-02 %%, %% PROPERTY-SHAPE-NAME-NN %% .
-
-%% PROPERTY-SHAPE-NAME-01 %% a sh:PropertyShape ;
-    sh:path %% PROPERTY-01 %%  ;
-    sh:minCount %% VALUE-01 %% .
-
-%% PROPERTY-SHAPE-NAME-02 %% a sh:PropertyShape ;
-    sh:path %% PROPERTY-02 %%  ;
-    sh:minCount %% VALUE-02 %% .
-
-%% PROPERTY-SHAPE-NAME-NN %% a sh:PropertyShape ;
-    sh:path %% PROPERTY-NN %%  ;
-    sh:minCount %% VALUE-NN %% .              
-                </textarea>
-                <div class="d-flex justify-content-end my-2">
-                  <button type="button" class="btn btn-outline-secondary button-font">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clipboard2" viewBox="0 0 16 16">
-                      <path d="M3.5 2a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5H12a.5.5 0 0 1 0-1h.5A1.5 1.5 0 0 1 14 2.5v12a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-12A1.5 1.5 0 0 1 3.5 1H4a.5.5 0 0 1 0 1h-.5Z"/>
-                      <path d="M10 .5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5.5.5 0 0 1-.5.5.5.5 0 0 0-.5.5V2a.5.5 0 0 0 .5.5h5A.5.5 0 0 0 11 2v-.5a.5.5 0 0 0-.5-.5.5.5 0 0 1-.5-.5Z"/>
-                    </svg>
-                    Copy
-                  </button>
-                </div>
-              </td>
-              <td class="details text-justify">
-                Cek kardinalitas minimum dari suatu property pada entitas sebagai instance dari 
-                suatu class. Nilai kardinalitas dari property diasosiasikan sebagai batas minimum 
-                untuk suatu entitas dikatakan komplet/lengkap.
-              </td>
-              {% if is_admin %}
-              <td class="text-center">
-                  <div class="btn btn-danger button-font">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                      <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-                    </svg>
-                    Delete
+                <td class="details text-justify">
+                  Pattern untuk mengecek kardinalitas minimum dari suatu property pada suatu 
+                  instance class yang ada di Wikidata KG. Class didefinisikan pada %% CLASS-URI  %% . 
+                  Property-property yang diharuskan ada didefinisikan pada %% PROPERTY-01 %%, 
+                  %% PROPERTY-02 %%, hingga %% PROPERTY-NN %% sesuai kebutuhan.
+                </td>
+                {% if is_admin %}
+                <td class="text-center">
+                    <div class="btn btn-danger button-font">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                      </svg>
+                      Delete
+                    </div>
+                  </td>
+                {% endif %}
+              </tr>
+              <tr>
+                <th scope="row" class="details fw-bold text-center">3</th>
+                <td class="code">
+                  <textarea style="width: 100%; resize: none;" rows="12" readonly>
+  %% SHAPE-NAME %% a sh:NodeShape;
+      sh:targetClass %% CLASS-NAME %% ;
+      sh:property %% PROPERTY-SHAPE-NAME-01 %%, %% PROPERTY-SHAPE-NAME-02 %%, %% PROPERTY-SHAPE-NAME-NN %% .
+  
+  %% PROPERTY-SHAPE-NAME-01 %% a sh:PropertyShape ;
+      sh:path %% PROPERTY-01 %%  ;
+      sh:minCount %% VALUE-01 %% .
+  
+  %% PROPERTY-SHAPE-NAME-02 %% a sh:PropertyShape ;
+      sh:path %% PROPERTY-02 %%  ;
+      sh:minCount %% VALUE-02 %% .
+  
+  %% PROPERTY-SHAPE-NAME-NN %% a sh:PropertyShape ;
+      sh:path %% PROPERTY-NN %%  ;
+      sh:minCount %% VALUE-NN %% .              
+                  </textarea>
+                  <div class="d-flex justify-content-end my-2">
+                    <button type="button" class="btn btn-outline-secondary button-font">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clipboard2" viewBox="0 0 16 16">
+                        <path d="M3.5 2a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5H12a.5.5 0 0 1 0-1h.5A1.5 1.5 0 0 1 14 2.5v12a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-12A1.5 1.5 0 0 1 3.5 1H4a.5.5 0 0 1 0 1h-.5Z"/>
+                        <path d="M10 .5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5.5.5 0 0 1-.5.5.5.5 0 0 0-.5.5V2a.5.5 0 0 0 .5.5h5A.5.5 0 0 0 11 2v-.5a.5.5 0 0 0-.5-.5.5.5 0 0 1-.5-.5Z"/>
+                      </svg>
+                      Copy
+                    </button>
                   </div>
                 </td>
-              {% endif %}
-            </tr>
-          </tbody>
-        </table>
+                <td class="details text-justify">
+                  Cek kardinalitas minimum dari suatu property pada entitas sebagai instance dari 
+                  suatu class. Nilai kardinalitas dari property diasosiasikan sebagai batas minimum 
+                  untuk suatu entitas dikatakan komplet/lengkap.
+                </td>
+                {% if is_admin %}
+                <td class="text-center">
+                    <div class="btn btn-danger button-font">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                      </svg>
+                      Delete
+                    </div>
+                  </td>
+                {% endif %}
+              </tr>
+            </tbody> -->
+
+
+            <tbody>
+              {% for pattern in list_shacl %}
+              <tr>
+                <th scope="row" class="details fw-bold text-center">{{ pattern.id }}</th>
+                <td class="code">
+                  <textarea style="width: 100%; resize: none;" rows="12" readonly>
+                    {{ pattern.code }}
+                  </textarea>
+                  <div class="d-flex justify-content-end my-2">
+                    <button type="button" class="btn btn-outline-secondary button-font">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clipboard2" viewBox="0 0 16 16">
+                        <path d="M3.5 2a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5H12a.5.5 0 0 1 0-1h.5A1.5 1.5 0 0 1 14 2.5v12a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-12A1.5 1.5 0 0 1 3.5 1H4a.5.5 0 0 1 0 1h-.5Z"/>
+                        <path d="M10 .5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5.5.5 0 0 1-.5.5.5.5 0 0 0-.5.5V2a.5.5 0 0 0 .5.5h5A.5.5 0 0 0 11 2v-.5a.5.5 0 0 0-.5-.5.5.5 0 0 1-.5-.5Z"/>
+                      </svg>
+                      Copy
+                    </button>
+                  </div>
+                </td>
+                <td class="details text-justify">
+                  {{ pattern.description }}
+                </td> 
+                {% if is_admin %}
+                  <td class="text-center">
+                    <div class="btn btn-danger button-font">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                      </svg>
+                      Delete
+                    </div>
+                  </td>
+                {% endif %}
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
-
+  
+  
   <!-- Modal Form -->
   <div class="modal fade" id="modal-form" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
