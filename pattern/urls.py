@@ -5,5 +5,6 @@ from . import views
 app_name = 'pattern'
 
 urlpatterns = [
-    path('', views.pattern_page, name='pattern'),
+    path('home', views.pattern_page, name='pattern'),
+    path('delete', views.delete_shacl, name="delete"),
 ]

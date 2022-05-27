@@ -10,8 +10,6 @@ def pattern_page(request):
     with connection.cursor() as cursor:
         cursor.execute('SELECT * FROM pattern_shaclpattern')
         list_shacl = dictfetchall(cursor)
-        print("testing")
-        print(list_shacl)
     context = {
         'list_shacl':list_shacl,
         "is_admin": is_admin,
@@ -39,3 +37,21 @@ def dictfetchall(cursor):
         dict(zip(columns, row))
         for row in cursor.fetchall()
     ]
+
+def delete_shacl(request):
+    if request.method == 'POST':
+        id = request.POST['id']
+        with connection.cursor() as cursor:
+            cursor.execute('DELETE FROM pattern_shaclpattern WHERE id = %s', \
+                [id])
+            cursor.execute('SELECT * FROM pattern_shaclpattern')
+            list_shacl = dictfetchall(cursor)
+            print("testing")
+            print(list_shacl)
+        context = {
+        'list_shacl':list_shacl
+        }
+        return redirect('pattern:pattern')
+    else:
+        ## Tambahin notfound.html
+        return render(request, 'notfound.html')
